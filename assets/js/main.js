@@ -67,7 +67,7 @@
 
   /* --- Scroll reveal ---------------------------------------------------- */
   function initReveal() {
-    var targets = document.querySelectorAll(".card, .sample, .pull, .qa");
+    var targets = document.querySelectorAll(".card, .statement, .flow__step, .video__frame, .qa");
     if (!targets.length) return;
 
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -91,9 +91,45 @@
     });
   }
 
+  /* --- Video facade (click-to-load) ------------------------------------- */
+  function extractVideoId(url) {
+    var match = url.match(/(?:youtu\.be\/|[?&]v=|\/embed\/)([A-Za-z0-9_-]{6,})/);
+    return match ? match[1] : null;
+  }
+
+  function initVideo() {
+    var block = document.querySelector("[data-video-block]");
+    if (!block) return;
+
+    var button = block.querySelector("[data-video-play]");
+    var caption = block.querySelector("[data-video-caption]");
+    var url = (config.videoUrl || "").trim();
+    var id = url ? extractVideoId(url) : null;
+
+    /* No configured video: keep the placeholder exactly as shipped. */
+    if (!button || !id) return;
+
+    if (caption) {
+      caption.textContent = "Sixty seconds on what CrashDash is, and who it is for.";
+    }
+
+    button.addEventListener("click", function () {
+      var frame = document.createElement("iframe");
+      frame.src = "https://www.youtube-nocookie.com/embed/" + id + "?rel=0";
+      frame.title = config.videoTitle || "CrashDash introduction";
+      frame.setAttribute("loading", "lazy");
+      frame.setAttribute("allowfullscreen", "");
+      frame.setAttribute("allow", "encrypted-media; picture-in-picture");
+      button.replaceWith(frame);
+      if (caption) caption.remove();
+      frame.focus();
+    });
+  }
+
   function init() {
     initNav();
     initBetaLinks();
+    initVideo();
     initYear();
     initReveal();
   }

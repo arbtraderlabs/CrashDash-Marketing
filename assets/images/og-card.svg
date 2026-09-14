@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img"
-     aria-label="CrashDash — overlooked UK small-caps, brought back into view">
+     aria-label="CrashDash — find what others have forgotten">
   <defs>
     <linearGradient id="ogBg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b1220"/>
-      <stop offset="1" stop-color="#122a3a"/>
+      <stop offset="0" stop-color="#070b14"/>
+      <stop offset="1" stop-color="#101d33"/>
     </linearGradient>
     <linearGradient id="ogMark" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#12a196"/>
-      <stop offset="1" stop-color="#0a5c56"/>
+      <stop offset="0" stop-color="#4a8dff"/>
+      <stop offset="1" stop-color="#1b4fd0"/>
     </linearGradient>
     <linearGradient id="ogRule" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#12a196"/>
-      <stop offset="1" stop-color="#12a196" stop-opacity="0"/>
+      <stop offset="0" stop-color="#2f7bff"/>
+      <stop offset="1" stop-color="#2f7bff" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
@@ -30,14 +30,14 @@
 
   <text x="96" y="300"
         font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
-        font-size="66" font-weight="700" fill="#ffffff" letter-spacing="-1.6">Overlooked companies.</text>
+        font-size="66" font-weight="700" fill="#ffffff" letter-spacing="-1.6">Find what others</text>
   <text x="96" y="382"
         font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
-        font-size="66" font-weight="700" fill="#7fd8d0" letter-spacing="-1.6">A second look.</text>
+        font-size="66" font-weight="700" fill="#ffd21e" letter-spacing="-1.6">have forgotten.</text>
 
   <rect x="96" y="440" width="620" height="3" fill="url(#ogRule)"/>
 
   <text x="96" y="512"
         font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
-        font-size="30" fill="#a9b6c6">UK-listed smaller companies · research tool · private beta</text>
+        font-size="30" fill="#8ea1bd">UK-listed stocks · research tool · LSE private beta</text>
 </svg>
