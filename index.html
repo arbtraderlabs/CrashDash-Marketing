@@ -22,10 +22,13 @@
 <meta property="og:title" content="CrashDash — find what others have forgotten">
 <meta property="og:description" content="A selective market-discovery and research tool for UK-listed stocks that may be beaten down, overlooked or misunderstood. LSE private beta.">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CrashDash — find what others have forgotten">
+<meta name="twitter:description" content="UK-listed stocks that may be beaten down, overlooked or misunderstood. LSE private beta.">
 
 <!-- Social preview image: export assets/images/og-card.svg to a 1200x630 PNG
      (og-card.png), then add:
        <meta property="og:image" content="assets/images/og-card.png">
+       <meta name="twitter:image" content="assets/images/og-card.png">
        <meta name="twitter:card" content="summary_large_image">
      SVG is not rendered by the major social platforms, so it is deliberately not
      referenced here rather than shipping a broken preview. -->
@@ -41,12 +44,18 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
+<!-- ==================================================== HEADER =========== -->
 <header class="site-header" id="top">
   <div class="wrap site-header__inner">
     <a class="brand" href="#top" aria-label="CrashDash home">
-      <img class="brand__mark" src="assets/images/logo.svg" alt="" width="34" height="34">
-      <span class="brand__name">CrashDash</span>
+      <img class="brand__mark" src="assets/images/logo.svg" alt="" width="36" height="36">
+      <span class="brand__text">
+        <span class="brand__name">CrashDash</span>
+        <span class="brand__tagline">When the market breaks, you don't.</span>
+      </span>
     </a>
+
+    <span class="badge">LSE beta · Limited access</span>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <span class="nav-toggle__bars" aria-hidden="true"></span>
@@ -54,10 +63,11 @@
     </button>
 
     <nav class="site-nav" id="site-nav" aria-label="Primary">
-      <a href="#different">Why different</a>
+      <a href="#top">Home</a>
+      <a href="#different">What is CrashDash?</a>
       <a href="#who">Who it's for</a>
       <a href="#how">How it works</a>
-      <a href="#video">Video</a>
+      <a href="#faq">FAQ</a>
       <a class="btn btn--sm btn--primary" data-beta-link href="#beta">Request beta access</a>
     </nav>
   </div>
@@ -65,147 +75,224 @@
 
 <main id="main">
 
-  <!-- ================================================================ HERO -->
+  <!-- ==================================================== HERO ========== -->
   <section class="hero">
+    <img class="hero__atmosphere" src="assets/images/hero-atmosphere.svg" alt="" aria-hidden="true">
+    <div class="hero__scrim" aria-hidden="true"></div>
+
     <div class="wrap hero__inner">
-      <p class="eyebrow">Calling LSE investors</p>
-      <h1 class="hero__title">Find what others<br><span class="hl">have forgotten.</span></h1>
-      <p class="hero__lede">
-        CrashDash searches the UK market for beaten-down, overlooked and
-        misunderstood stocks that may deserve another look. It helps narrow the
-        market so you can spend less time screening and more time researching.
-      </p>
-      <div class="hero__actions">
-        <a class="btn btn--primary btn--lg" data-beta-link href="#beta">Request beta access</a>
-        <a class="btn btn--ghost btn--lg" href="#video">
-          <span class="btn__play" aria-hidden="true"></span>
-          Watch why CrashDash &mdash; 60 sec
-        </a>
-      </div>
-      <p class="hero__subtext">
-        <span>LSE private beta</span>
-        <span aria-hidden="true">·</span>
-        <span>Limited early access</span>
-        <span aria-hidden="true">·</span>
-        <span>Free during testing</span>
-      </p>
-    </div>
-  </section>
-
-  <!-- =========================================================== DIFFERENT -->
-  <section class="section section--tinted" id="different">
-    <div class="wrap">
-      <header class="section__head">
-        <p class="kicker">The difference</p>
-        <h2>Not another stock screener</h2>
-        <p class="section__lede">
-          Traditional screeners can give you hundreds of stocks and leave you to do
-          the work. CrashDash takes a different approach.
+      <div class="hero__copy">
+        <p class="eyebrow">Overlooked today. Opportunity tomorrow.</p>
+        <h1 class="hero__title">Find what others<br><span class="hl">have forgotten.</span></h1>
+        <p class="hero__lede">
+          CrashDash searches the UK market for beaten-down, overlooked and
+          misunderstood stocks — so you can investigate earlier.
         </p>
-      </header>
 
-      <div class="split">
-        <div class="split__text">
-          <p class="prose">
-            It searches the UK market for companies that may be overlooked,
-            misunderstood or starting to change.
-          </p>
-          <p class="prose">
-            Think of it as a personal research watchlist doing the initial searching
-            for you.
-          </p>
-
-          <ul class="tick">
-            <li>We find candidates.</li>
-            <li>We surface what changed.</li>
-            <li>We give you a place to start.</li>
-          </ul>
-
-          <p class="prose prose--strong">
-            You do the digging.<br>You make the decision.
-          </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" data-beta-link href="#beta">Request beta access</a>
+          <a class="btn btn--ghost btn--lg" href="#video">
+            <span class="btn__play" aria-hidden="true"></span>
+            Watch the video (60s)
+          </a>
         </div>
 
-        <aside class="statement">
-          <p class="statement__quote">
-            We don't help you watch more stocks.
+        <p class="hero__subtext">
+          <span>Free during beta</span>
+          <span aria-hidden="true">·</span>
+          <span>LSE only, for now</span>
+          <span aria-hidden="true">·</span>
+          <span>Limited early access</span>
+        </p>
+      </div>
+
+      <aside class="hero__rail" aria-hidden="true">
+        <ul class="rail">
+          <li>Beaten down</li>
+          <li>Overlooked</li>
+          <li>Mispriced</li>
+          <li>Opportunity</li>
+        </ul>
+        <p class="rail__note">The best opportunities often look uninteresting at first.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================================================= BENEFITS ========= -->
+  <section class="benefits" aria-label="What CrashDash does">
+    <ul class="wrap benefits__grid">
+      <li class="benefit">
+        <span class="benefit__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/>
+          </svg>
+        </span>
+        <h3>Find overlooked opportunities</h3>
+        <p>Searches the UK market for unusual situations.</p>
+      </li>
+      <li class="benefit">
+        <span class="benefit__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M3 20h18"/><rect x="5" y="12" width="3.4" height="8" rx="1"/>
+            <rect x="10.6" y="7" width="3.4" height="13" rx="1"/><rect x="16.2" y="3" width="3.4" height="17" rx="1"/>
+          </svg>
+        </span>
+        <h3>Save time</h3>
+        <p>Let CrashDash do the initial searching.</p>
+      </li>
+      <li class="benefit">
+        <span class="benefit__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M12 3a6 6 0 0 0-6 6v3.5L4.5 16h15L18 12.5V9a6 6 0 0 0-6-6Z"/>
+            <path d="M9.8 19a2.4 2.4 0 0 0 4.4 0"/>
+          </svg>
+        </span>
+        <h3>Get alerted</h3>
+        <p>Know when something deserves a closer look.</p>
+      </li>
+      <li class="benefit">
+        <span class="benefit__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M12 6.5C10.6 5 8.6 4.3 6.3 4.3H3v13.4h3.3c2.3 0 4.3.7 5.7 2.2"/>
+            <path d="M12 6.5c1.4-1.5 3.4-2.2 5.7-2.2H21v13.4h-3.3c-2.3 0-4.3.7-5.7 2.2"/>
+            <path d="M12 6.5v13.4"/>
+          </svg>
+        </span>
+        <h3>Do your own research</h3>
+        <p>A starting point for deeper investigation.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================================================== PRODUCT ========= -->
+  <section class="section section--tinted" id="product">
+    <div class="wrap">
+      <div class="product__split">
+        <div class="product__copy">
+          <p class="kicker">The difference</p>
+          <h2>We don't help you watch more stocks.</h2>
+          <p class="statement__quote statement__quote--tight">
             <span class="hl">We help you find fewer stocks worth watching.</span>
           </p>
-          <p class="statement__sub">Less screening. More investigating.</p>
-        </aside>
+          <p class="prose">
+            CrashDash narrows the UK market down to a shortlist of situations that
+            may be worth your time — then shows you what changed.
+          </p>
+          <p class="prose prose--strong">Less screening. More investigating.</p>
+        </div>
+
+        <!-- Illustrative schematic of the CrashDash research view. This is a
+             deliberately abstract wireframe: no tickers, no prices and no
+             performance figures are shown, because real product screenshots are
+             not yet available. Replace this block with a real screenshot when
+             one exists (see README, "Product imagery"). -->
+        <figure class="schematic">
+          <div class="schematic__chrome" aria-hidden="true">
+            <span class="schematic__dot"></span>
+            <span class="schematic__dot"></span>
+            <span class="schematic__dot"></span>
+            <span class="schematic__title">CrashDash · research view</span>
+          </div>
+
+          <div class="schematic__body" aria-hidden="true">
+            <div class="schematic__list">
+              <p class="schematic__cap">Shortlist</p>
+              <div class="skel skel--row"><span class="skel__bar skel__bar--w60"></span><span class="skel__dot skel__dot--hi"></span></div>
+              <div class="skel skel--row"><span class="skel__bar skel__bar--w45"></span><span class="skel__dot skel__dot--md"></span></div>
+              <div class="skel skel--row"><span class="skel__bar skel__bar--w70"></span><span class="skel__dot skel__dot--lo"></span></div>
+              <div class="skel skel--row"><span class="skel__bar skel__bar--w50"></span><span class="skel__dot skel__dot--md"></span></div>
+            </div>
+
+            <div class="schematic__detail">
+              <p class="schematic__cap">Why CrashDash noticed</p>
+              <div class="skel skel--line"><span class="skel__bar skel__bar--w90"></span></div>
+              <div class="skel skel--line"><span class="skel__bar skel__bar--w75"></span></div>
+              <div class="skel skel--line"><span class="skel__bar skel__bar--w80"></span></div>
+
+              <div class="schematic__chart">
+                <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="schFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#2f7bff" stop-opacity="0.35"/>
+                      <stop offset="1" stop-color="#2f7bff" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <g stroke="#2f7bff" stroke-opacity="0.16" stroke-width="1">
+                    <path d="M0 30H400M0 60H400M0 90H400"/>
+                  </g>
+                  <path d="M0 96 C40 92 62 100 96 88 C132 76 156 92 190 84
+                           C226 76 250 54 288 60 C322 66 348 44 400 34"
+                        fill="none" stroke="#2f7bff" stroke-width="2.4" stroke-linecap="round"/>
+                  <path d="M0 96 C40 92 62 100 96 88 C132 76 156 92 190 84
+                           C226 76 250 54 288 60 C322 66 348 44 400 34 L400 120 L0 120 Z"
+                        fill="url(#schFill)"/>
+                  <circle cx="288" cy="60" r="5" fill="#ffd21e"/>
+                </svg>
+              </div>
+
+              <div class="schematic__tags">
+                <span class="skel__pill"></span>
+                <span class="skel__pill"></span>
+                <span class="skel__pill"></span>
+              </div>
+            </div>
+          </div>
+
+          <figcaption class="schematic__caption">
+            Illustrative schematic of the CrashDash research view — a layout
+            diagram, not a screenshot. Real data is not shown.
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- ================================================================ WHO -->
-  <section class="section" id="who">
+  <!-- ============================================ BEFORE / AFTER ========= -->
+  <section class="section" id="different">
     <div class="wrap">
-      <header class="section__head">
-        <p class="kicker">Selective by design</p>
-        <h2>Who it's for</h2>
+      <header class="section__head center">
+        <p class="kicker">Not another stock screener</p>
+        <h2>A different way to find opportunities.</h2>
         <p class="section__lede">
-          CrashDash is not for everybody. It is built for people who research
-          individual companies and would rather see a shortlist than a flood.
+          Most screeners hand you hundreds of stocks and leave you to work through
+          them. CrashDash takes a more selective, contrarian approach.
         </p>
       </header>
 
-      <div class="cards">
-        <article class="card card--yes">
-          <h3 class="card__title">LSE investors &amp; traders</h3>
-          <ul class="tick">
-            <li>Invest in UK-listed stocks</li>
-            <li>Cannot watch the market all day</li>
-            <li>Like researching individual companies</li>
-            <li>Prefer selective ideas over endless lists</li>
-            <li>Think in weeks, months or longer</li>
+      <div class="compare">
+        <div class="compare__side compare__side--before">
+          <p class="compare__tag">Before</p>
+          <p class="compare__state">Unnoticed</p>
+          <ul class="compare__list">
+            <li>Falling share price</li>
+            <li>Low volume</li>
+            <li>Negative sentiment</li>
+            <li>Off the radar</li>
           </ul>
-        </article>
+        </div>
 
-        <article class="card card--yes">
-          <h3 class="card__title">Ideal if you&hellip;</h3>
-          <ul class="tick">
-            <li>Like contrarian or recovery situations</li>
-            <li>Look for overlooked companies</li>
-            <li>Want technology to narrow the market</li>
-            <li>Have a full-time job or limited research time</li>
-            <li>Accept that interesting situations can also carry significant risk</li>
-          </ul>
-        </article>
+        <div class="compare__divider" aria-hidden="true">
+          <img src="assets/images/logo.svg" alt="" width="52" height="52">
+        </div>
 
-        <article class="card card--no">
-          <h3 class="card__title">Probably not for you if&hellip;</h3>
-          <ul class="cross">
-            <li>You are an HFT trader</li>
-            <li>You are a scalper</li>
-            <li>You want constant intraday alerts</li>
-            <li>You want hundreds of signals</li>
-            <li>You want software to tell you exactly what to buy</li>
-            <li>You want a generic stock screener</li>
+        <div class="compare__side compare__side--after">
+          <p class="compare__tag">After</p>
+          <p class="compare__state">Worth a closer look</p>
+          <ul class="compare__list">
+            <li>Something changes</li>
+            <li>Early signals surface</li>
+            <li>Context is assembled</li>
+            <li>You investigate</li>
           </ul>
-        </article>
+        </div>
       </div>
+
+      <p class="compare__caption">Same stock. A different perspective.</p>
     </div>
   </section>
 
-  <!-- ========================================================== SAVE TIME -->
-  <section class="section section--tinted" id="time">
-    <div class="wrap wrap--narrow center">
-      <p class="kicker">Built around your week</p>
-      <h2>Your evenings are for research, not screening</h2>
-      <p class="section__lede">
-        You shouldn't need to stare at a screener all day to find something worth
-        researching. If you work full time, the market has already moved on by the
-        time you sit down.
-      </p>
-      <p class="statement__quote statement__quote--sm">
-        Let CrashDash do the searching.
-        <span class="hl">Use your time for the research that actually matters.</span>
-      </p>
-    </div>
-  </section>
-
-  <!-- ================================================================ HOW -->
-  <section class="section" id="how">
+  <!-- ====================================================== HOW ========== -->
+  <section class="section section--tinted" id="how">
     <div class="wrap">
       <header class="section__head">
         <p class="kicker">How it works</p>
@@ -218,22 +305,27 @@
 
       <ol class="flow">
         <li class="flow__step">
+          <span class="flow__num">01</span>
           <span class="flow__label">Forgotten</span>
           <span class="flow__note">A UK-listed company drifts out of the conversation.</span>
         </li>
         <li class="flow__step">
+          <span class="flow__num">02</span>
           <span class="flow__label">Something changes</span>
-          <span class="flow__note">The picture shifts &mdash; quietly at first.</span>
+          <span class="flow__note">The picture shifts — quietly at first.</span>
         </li>
         <li class="flow__step">
+          <span class="flow__num">03</span>
           <span class="flow__label">CrashDash notices</span>
           <span class="flow__note">It surfaces the candidate and what moved.</span>
         </li>
         <li class="flow__step">
+          <span class="flow__num">04</span>
           <span class="flow__label">You investigate</span>
           <span class="flow__note">You read, you dig, you form your own view.</span>
         </li>
         <li class="flow__step flow__step--end">
+          <span class="flow__num">05</span>
           <span class="flow__label">Worth investigating</span>
           <span class="flow__note">A place to start. Never a conclusion.</span>
         </li>
@@ -241,14 +333,50 @@
 
       <div class="journey">
         <p class="journey__title">The full loop</p>
-        <ul class="journey__list">
-          <li>CrashDash</li>
-          <li>Interesting event</li>
-          <li>Telegram alert</li>
-          <li>Open CrashDash</li>
-          <li>Investigate</li>
-          <li class="journey__end">You decide</li>
-        </ul>
+        <ol class="journey__track">
+          <li class="journey__node">
+            <span class="journey__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/>
+              </svg>
+            </span>
+            <span class="journey__label">CrashDash detects</span>
+          </li>
+          <li class="journey__node">
+            <span class="journey__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M21 3 3 10.5l7.5 3L13.5 21 21 3Z"/>
+              </svg>
+            </span>
+            <span class="journey__label">Telegram alert</span>
+          </li>
+          <li class="journey__node">
+            <span class="journey__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18"/>
+              </svg>
+            </span>
+            <span class="journey__label">Open CrashDash</span>
+          </li>
+          <li class="journey__node">
+            <span class="journey__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M12 6.5C10.6 5 8.6 4.3 6.3 4.3H3v13.4h3.3c2.3 0 4.3.7 5.7 2.2"/>
+                <path d="M12 6.5c1.4-1.5 3.4-2.2 5.7-2.2H21v13.4h-3.3c-2.3 0-4.3.7-5.7 2.2"/>
+              </svg>
+            </span>
+            <span class="journey__label">Investigate</span>
+          </li>
+          <li class="journey__node journey__node--end">
+            <span class="journey__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+            </span>
+            <span class="journey__label">You decide</span>
+          </li>
+        </ol>
+        <p class="journey__caption">Alert. Investigate. Decide.</p>
         <p class="journey__note">
           Alert timing and delivery details are covered in your onboarding material.
         </p>
@@ -256,12 +384,137 @@
     </div>
   </section>
 
-  <!-- ============================================================== VIDEO -->
-  <section class="section section--tinted" id="video">
+  <!-- ====================================================== WHO ========== -->
+  <section class="section" id="who">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="kicker">Selective by design</p>
+        <h2>Who's it for?</h2>
+        <p class="section__lede">
+          Built for people who research individual companies and would rather see a
+          shortlist than a flood.
+        </p>
+      </header>
+
+      <div class="cards">
+        <article class="card card--yes">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4"/>
+              <path d="M16 5.2A3.2 3.2 0 0 1 16 11"/><path d="M17.5 14.9c2.1.6 3.5 2.2 3.5 5.1"/>
+            </svg>
+          </span>
+          <h3 class="card__title">LSE investors &amp; traders</h3>
+          <ul class="tick">
+            <li>You invest in UK shares</li>
+            <li>You can't watch the market all day</li>
+            <li>You like finding overlooked opportunities</li>
+            <li>You're comfortable doing your own research</li>
+            <li>You think in weeks, months or longer</li>
+          </ul>
+        </article>
+
+        <article class="card card--yes">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="1"/>
+            </svg>
+          </span>
+          <h3 class="card__title">Ideal if you&hellip;</h3>
+          <ul class="tick">
+            <li>Prefer contrarian, recovery and undervalued situations</li>
+            <li>Want a shortlist, not hundreds of scanner results</li>
+            <li>Have a full-time job or other commitments</li>
+            <li>Like digging deeper when something interesting appears</li>
+            <li>Understand higher potential reward means higher risk</li>
+          </ul>
+        </article>
+
+        <article class="card card--no">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+              <circle cx="12" cy="12" r="8.5"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/>
+            </svg>
+          </span>
+          <h3 class="card__title">Probably not for you if&hellip;</h3>
+          <ul class="cross">
+            <li>You're a high-frequency trader or scalper</li>
+            <li>You want constant intraday signals</li>
+            <li>You're looking for a traditional stock screener</li>
+            <li>You want a giant list of undervalued stocks</li>
+            <li>You expect CrashDash to tell you exactly what to buy or sell</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="cards__note">
+        CrashDash is not for everybody. The wrong user should be able to self-select
+        out — that is deliberate.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================================================== QUOTE ========== -->
+  <section class="quote">
+    <img class="quote__bg" src="assets/images/london-skyline.svg" alt="" aria-hidden="true">
+    <div class="quote__scrim" aria-hidden="true"></div>
+    <div class="wrap quote__inner">
+      <blockquote class="quote__text">
+        The interesting time isn't always when everyone is talking about a stock.
+        Sometimes it's when almost nobody is.
+      </blockquote>
+      <p class="quote__sign">Patience finds opportunity.</p>
+    </div>
+  </section>
+
+  <!-- ===================================================== WEEK ========== -->
+  <section class="section section--tinted" id="week">
     <div class="wrap">
       <header class="section__head center">
-        <p class="kicker">Introduction</p>
-        <h2>Why CrashDash?</h2>
+        <p class="kicker">Built around your week</p>
+        <h2>Your evenings are for research, not screening.</h2>
+      </header>
+
+      <ul class="week">
+        <li class="week__item">
+          <span class="week__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/>
+            </svg>
+          </span>
+          <h3>Work</h3>
+        </li>
+        <li class="week__item">
+          <span class="week__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M12 20s7-4.2 7-9a4 4 0 0 0-7-2.6A4 4 0 0 0 5 11c0 4.8 7 9 7 9Z"/>
+            </svg>
+          </span>
+          <h3>Life</h3>
+        </li>
+        <li class="week__item week__item--accent">
+          <span class="week__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M3 17l5-5 4 3 6-7"/><path d="M14 8h5v5"/>
+            </svg>
+          </span>
+          <h3>Market</h3>
+        </li>
+      </ul>
+
+      <p class="week__caption">
+        CrashDash watches for interesting situations. You investigate when something
+        deserves attention.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================================================== VIDEO ========== -->
+  <section class="section" id="video">
+    <div class="wrap">
+      <header class="section__head center">
+        <p class="kicker">Why CrashDash?</p>
+        <h2>Sixty seconds on why we built it.</h2>
       </header>
 
       <!-- Video facade. Click-to-load: nothing third-party is requested until the
@@ -284,34 +537,33 @@
     </div>
   </section>
 
-  <!-- =============================================================== BETA -->
-  <section class="section section--accent" id="beta">
-    <div class="wrap wrap--narrow center">
-      <p class="kicker">CrashDash LSE private beta</p>
-      <h2>Help shape what comes next</h2>
-      <p class="section__lede">
-        We're opening CrashDash to a small group of UK investors and traders.
-      </p>
-      <p class="statement__quote statement__quote--sm">
-        Use it. Test it. Tell us what works.
-      </p>
-
-      <div class="beta-cta">
-        <!-- ============================================================
-             BETA REQUEST LINK — SET THIS BEFORE DEPLOYING
-             Put your Google Form (or equivalent) URL in
-             assets/js/config.js -> betaRequestUrl
-             The buttons are wired automatically from that value.
-             ============================================================ -->
-        <a class="btn btn--primary btn--lg" data-beta-link href="#beta">Request beta access</a>
-
-        <!-- ============================================================
-             OPTIONAL CONTACT EMAIL
-             To offer a mailto fallback, replace the sentence below with a
-             link to a contact address you are happy to publish. Do not
-             commit a placeholder address.
-             ============================================================ -->
-        <p class="beta-note">Applications are reviewed manually, in small batches.</p>
+  <!-- ===================================================== BETA ========== -->
+  <section class="section" id="beta">
+    <div class="wrap">
+      <div class="beta">
+        <span class="beta__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4"/>
+            <path d="M16 5.2A3.2 3.2 0 0 1 16 11"/><path d="M17.5 14.9c2.1.6 3.5 2.2 3.5 5.1"/>
+          </svg>
+        </span>
+        <div class="beta__copy">
+          <p class="kicker">CrashDash LSE private beta</p>
+          <h2>Join the beta</h2>
+          <p>
+            We're opening CrashDash to a small group of UK investors and traders. Use
+            it, test it, and help shape what comes next.
+          </p>
+        </div>
+        <div class="beta__action">
+          <!-- ============================================================
+               BETA REQUEST LINK — SET THIS BEFORE DEPLOYING
+               Put your form URL in assets/js/config.js -> betaRequestUrl
+               The buttons are wired automatically from that value.
+               ============================================================ -->
+          <a class="btn btn--primary btn--lg" data-beta-link href="#beta">Request beta access</a>
+          <p class="beta__note">Applications are reviewed manually, in small batches.</p>
+        </div>
       </div>
 
       <p class="fineprint">
@@ -321,8 +573,8 @@
     </div>
   </section>
 
-  <!-- ================================================================ FAQ -->
-  <section class="section" id="faq">
+  <!-- ====================================================== FAQ ========== -->
+  <section class="section section--faq" id="faq">
     <div class="wrap wrap--narrow">
       <header class="section__head">
         <h2>Questions</h2>
@@ -389,12 +641,40 @@
 
 </main>
 
+<!-- ==================================================== FOOTER =========== -->
 <footer class="site-footer">
   <div class="wrap site-footer__inner">
-    <div class="site-footer__brand">
-      <img src="assets/images/logo.svg" alt="" width="28" height="28">
-      <span>CrashDash</span>
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <img src="assets/images/logo.svg" alt="" width="32" height="32">
+        <span class="site-footer__name">CrashDash</span>
+        <span class="site-footer__tagline">When the market breaks, you don't.</span>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer">
+        <a href="#top">Home</a>
+        <a href="#different">What is CrashDash?</a>
+        <a href="#who">Who it's for</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="site-footer__social">
+        <!-- Social profiles: add real URLs here when they are confirmed public.
+             Left as non-links on purpose rather than pointing at unverified
+             accounts. -->
+        <span class="social" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-6.6 7.6L21.8 21h-5.5l-4.3-5.7L6.9 21H3.8l7-8-6.8-10h5.6l3.9 5.2L17.5 3Zm-1 16h1.6L7.6 4.6H5.9L16.5 19Z"/></svg>
+        </span>
+        <span class="social" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C18.3 5.2 12 5.2 12 5.2s-6.3 0-7.9.4a2.5 2.5 0 0 0-1.7 1.7C2 8.8 2 12 2 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.6.4 7.9.4 7.9.4s6.3 0 7.9-.4a2.5 2.5 0 0 0 1.7-1.7C22 15.2 22 12 22 12ZM10 15.2V8.8l5.5 3.2-5.5 3.2Z"/></svg>
+        </span>
+        <span class="social" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.2c-.3.3-.5.5-1 .5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L6.9 12.4 2.4 11c-1-.3-1-1 .2-1.4L20.5 2.9c.8-.3 1.5.2 1.4 1.4Z"/></svg>
+        </span>
+      </div>
     </div>
+
     <p class="site-footer__legal">
       CrashDash is a market-discovery and research tool for UK-listed companies. It is
       not financial advice, not a recommendation, and not an offer to buy or sell any
@@ -403,7 +683,11 @@
       risk, including the risk of losing your entire investment. Always do your own
       research.
     </p>
+
     <p class="site-footer__meta">
+      <span>UK opportunities. A brighter tomorrow.</span>
+    </p>
+    <p class="site-footer__meta site-footer__meta--dim">
       <span>&copy; <span id="year">2026</span> CrashDash</span>
       <span aria-hidden="true">·</span>
       <a href="#top">Back to top</a>

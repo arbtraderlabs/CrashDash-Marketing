@@ -38,6 +38,16 @@ yarn-error.log*
 # --- Dependency / build output (only if a build step is ever introduced) ----
 node_modules/
 dist/
+
+# --- Windows alternate-data-stream artefacts --------------------------------
+# Files copied from a Windows volume can carry a ":Zone.Identifier" sidecar.
+*:Zone.Identifier
+
+# --- Supplied working input (never publish) ---------------------------------
+# The landing-page pack is design input supplied for a build, not site output.
+# It carries briefs, the master prompt and reference mock-ups, is several MB of
+# imagery, and must not be published from a repository that is public-facing.
+/crashdash-landing-pack/
 build/
 .cache/
 

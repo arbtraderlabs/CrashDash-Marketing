@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900"
+     preserveAspectRatio="xMidYMid slice" role="img">
+  <title>Dark rocky landscape at first light with a young shoot breaking through</title>
+  <!-- Hero atmosphere. Original vector illustration: a broken, rocky landscape at
+       first light, with new growth pushing through a crack. It carries the
+       "overlooked today" metaphor without depicting any product capability or
+       performance. The left two-thirds stays calm so headline text holds contrast;
+       the visual anchor sits in the right third. -->
+  <defs>
+    <linearGradient id="haSky" x1="0" y1="0" x2="0.1" y2="1">
+      <stop offset="0"    stop-color="#060a14"/>
+      <stop offset="0.34" stop-color="#0c1630"/>
+      <stop offset="0.62" stop-color="#1b2c50"/>
+      <stop offset="0.86" stop-color="#33456b"/>
+      <stop offset="1"    stop-color="#3d4a68"/>
+    </linearGradient>
+    <radialGradient id="haSun" cx="0.68" cy="0.70" r="0.40">
+      <stop offset="0"    stop-color="#ffc46a" stop-opacity="0.92"/>
+      <stop offset="0.22" stop-color="#f09a3c" stop-opacity="0.60"/>
+      <stop offset="0.55" stop-color="#c1651f" stop-opacity="0.24"/>
+      <stop offset="1"    stop-color="#c1651f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="haHalo" cx="0.68" cy="0.70" r="0.62">
+      <stop offset="0"   stop-color="#8fb8ff" stop-opacity="0.20"/>
+      <stop offset="0.6" stop-color="#3f5f9e" stop-opacity="0.08"/>
+      <stop offset="1"   stop-color="#3f5f9e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="haRidgeFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#3a4f7a"/>
+      <stop offset="0.35" stop-color="#233257"/>
+      <stop offset="1"    stop-color="#141f38"/>
+    </linearGradient>
+    <linearGradient id="haRidgeMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#1e2b47"/>
+      <stop offset="0.4" stop-color="#131c31"/>
+      <stop offset="1"   stop-color="#0a1020"/>
+    </linearGradient>
+    <linearGradient id="haRock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101827"/>
+      <stop offset="1" stop-color="#04060c"/>
+    </linearGradient>
+    <linearGradient id="haCrack" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#ffd88a" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#ffb64d" stop-opacity="0.65"/>
+      <stop offset="1"    stop-color="#ffb64d" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="haLeaf" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#a8f2b4"/>
+      <stop offset="1" stop-color="#3f9e60"/>
+    </linearGradient>
+    <linearGradient id="haVignette" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#05070d" stop-opacity="0.72"/>
+      <stop offset="0.34" stop-color="#05070d" stop-opacity="0.05"/>
+      <stop offset="1"    stop-color="#05070d" stop-opacity="0.62"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#haSky)"/>
+  <rect width="1600" height="900" fill="url(#haHalo)"/>
+  <rect width="1600" height="900" fill="url(#haSun)"/>
+
+  <!-- far ridge, with rim light along the crest -->
+  <path d="M0 612 L190 512 L330 570 L470 470 L610 556 L760 496 L900 566
+           L1050 500 L1200 574 L1360 512 L1600 596 V900 H0 Z" fill="url(#haRidgeFar)"/>
+  <path d="M0 612 L190 512 L330 570 L470 470 L610 556 L760 496 L900 566
+           L1050 500 L1200 574 L1360 512 L1600 596"
+        fill="none" stroke="#7f9ad0" stroke-opacity="0.34" stroke-width="2.5"/>
+
+  <!-- mid ridge -->
+  <path d="M0 700 L150 640 L300 690 L460 616 L620 686 L780 626 L940 692
+           L1100 634 L1260 700 L1420 646 L1600 706 V900 H0 Z" fill="url(#haRidgeMid)"/>
+  <path d="M0 700 L150 640 L300 690 L460 616 L620 686 L780 626 L940 692
+           L1100 634 L1260 700 L1420 646 L1600 706"
+        fill="none" stroke="#5d78ad" stroke-opacity="0.26" stroke-width="2"/>
+
+  <!-- foreground rock, broken by a fissure -->
+  <path d="M0 792 L120 764 L260 796 L400 758 L520 800 L640 776 L760 812
+           L880 790 L1000 818 L1120 782 L1240 814 L1380 784 L1500 812 L1600 790 V900 H0 Z"
+        fill="url(#haRock)"/>
+  <path d="M0 848 L160 826 L320 852 L470 830 L620 858 L780 836 L930 862
+           L1090 836 L1250 860 L1420 838 L1600 858 V900 H0 Z"
+        fill="#03050a"/>
+
+  <!-- light escaping the fissure -->
+  <ellipse cx="1126" cy="812" rx="120" ry="34" fill="#ffb64d" opacity="0.20"/>
+  <path d="M1082 900 L1112 800 L1140 800 L1172 900 Z" fill="url(#haCrack)" opacity="0.75"/>
+  <path d="M1094 900 L1116 822 L1134 822 L1158 900 Z" fill="#ffe1a8" opacity="0.42"/>
+
+  <!-- new growth, catching the light -->
+  <g>
+    <path d="M1126 806 C1122 762 1122 726 1128 690"
+          stroke="#6cc184" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M1128 730 C1088 716 1064 682 1060 644 C1104 646 1130 674 1132 716 Z"
+          fill="url(#haLeaf)"/>
+    <path d="M1128 706 C1170 692 1194 658 1198 620 C1154 622 1128 650 1126 692 Z"
+          fill="url(#haLeaf)" opacity="0.9"/>
+    <path d="M1060 644 C1090 656 1112 682 1124 712" fill="none" stroke="#e9ffef"
+          stroke-opacity="0.35" stroke-width="2"/>
+    <path d="M1198 620 C1168 632 1146 658 1134 688" fill="none" stroke="#e9ffef"
+          stroke-opacity="0.28" stroke-width="2"/>
+  </g>
+
+  <!-- legibility vignette -->
+  <rect width="1600" height="900" fill="url(#haVignette)"/>
+</svg>

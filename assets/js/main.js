@@ -40,7 +40,7 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 880) setOpen(false);
+      if (window.innerWidth > 900) setOpen(false);
     });
   }
 
@@ -65,31 +65,11 @@
     if (el) el.textContent = String(new Date().getFullYear());
   }
 
-  /* --- Scroll reveal ---------------------------------------------------- */
-  function initReveal() {
-    var targets = document.querySelectorAll(".card, .statement, .flow__step, .video__frame, .qa");
-    if (!targets.length) return;
-
-    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce || !("IntersectionObserver" in window)) return;
-
-    Array.prototype.forEach.call(targets, function (el) {
-      el.classList.add("reveal");
-    });
-
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-
-    Array.prototype.forEach.call(targets, function (el) {
-      observer.observe(el);
-    });
-  }
+  /* --- Scroll reveal ----------------------------------------------------
+     Deliberately NOT implemented. An earlier revision faded sections in on
+     scroll, but a class-name mismatch between the script and the stylesheet
+     could leave content permanently invisible. On a conversion page the copy
+     must always be visible, so no element starts hidden. */
 
   /* --- Video facade (click-to-load) ------------------------------------- */
   function extractVideoId(url) {
@@ -131,7 +111,6 @@
     initBetaLinks();
     initVideo();
     initYear();
-    initReveal();
   }
 
   if (document.readyState === "loading") {

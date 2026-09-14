@@ -50,9 +50,11 @@ The `README` and any comment in this repository is public. Write accordingly.
     css/styles.css        all styling
     js/config.js          the one place you set the beta link and video URL
     js/main.js            small progressive-enhancement script
-    images/logo.svg       brand mark
-    images/favicon.svg    favicon
-    images/og-card.svg    social preview artwork
+    images/logo.svg       brand mark (lightning bolt + red/blue candles)
+    images/favicon.svg    app-icon treatment of the same mark
+    images/og-card.svg    social preview artwork (see step 5)
+    images/hero-atmosphere.svg   hero illustration
+    images/london-skyline.svg    quote-section illustration
 ```
 
 No framework is used, and none is required. That is intentional: it keeps the
@@ -118,6 +120,46 @@ left out until a PNG exists — the site ships nothing broken.
 
 ---
 
+## Product imagery
+
+The site currently ships **no screenshot of the CrashDash application**, and that
+is a deliberate decision rather than an oversight.
+
+A screenshot is the strongest possible proof for a product page. Before using
+one, it must be a **real** capture of the application. No screenshot of the real
+product exists in this repository or in any local CrashDash repository, and this
+page must never present a mock-up as if it were a real one.
+
+The sections in `index.html` marked with `data-` style comments do something
+honest instead:
+
+- the **research-view panel** in `#product` is an abstract wireframe. It contains
+  no ticker, no price and no performance figure, and its caption says plainly
+  that it is a layout diagram rather than a screenshot.
+- the **Before / After** block, the **flow**, and the **journey** are diagrams,
+  not product captures.
+
+### To replace the schematic with a real screenshot
+
+1. Run the application and capture the research dashboard at a desktop width
+   (1440 CSS px is a good target) and at 390 px for mobile.
+2. Confirm the capture contains **no** personal data, account names, real
+   holdings, internal hostnames, filesystem paths or operator-only fields. The
+   CrashDash interface has been designed to keep local paths out of public
+   artifacts, but verify the specific frame you capture.
+3. Save as `assets/images/product-dashboard.png` (and optionally
+   `product-dashboard-mobile.png`).
+4. Replace the `<figure class="schematic">` block in `index.html` with an
+   `<img>` using the existing `.schematic` border and shadow, plus a real
+   `alt` description.
+5. Delete the `.schematic__*` and `.skel__*` rules from `styles.css` once
+   nothing references them.
+
+Until then the schematic stands in, and every claim on the page is content the
+brief authorises.
+
+---
+
 ## Local preview
 
 Any static file server works. For example:
@@ -148,6 +190,11 @@ A Content-Security-Policy meta tag in `index.html` enforces the boundary:
 - `base-uri 'none'`, `object-src 'none'`
 - `frame-src` — limited to YouTube, and only so the optional video facade can
   build an embed *after* a visitor clicks play
+
+No element on the page starts hidden, and no scroll animation is used. An earlier
+revision faded sections in on scroll; that was removed because a mismatch between
+the script and the stylesheet could leave content permanently invisible. On a
+marketing page the copy must always render.
 
 There are no analytics, no trackers, no fonts or scripts loaded from a CDN, and
 no source maps.

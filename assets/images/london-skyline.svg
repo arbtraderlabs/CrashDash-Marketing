@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" width="1600" height="600"
+     preserveAspectRatio="xMidYMid slice" role="img">
+  <title>London skyline at dusk</title>
+  <!-- Quote-section backdrop. Original vector illustration of the Palace of
+       Westminster and the Elizabeth Tower as a dark silhouette, evoking a
+       patient, UK-listed market context. It is scenery only: no product UI,
+       no performance claim. -->
+  <defs>
+    <linearGradient id="lsSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#0a1120"/>
+      <stop offset="0.55" stop-color="#101b30"/>
+      <stop offset="1"   stop-color="#182642"/>
+    </linearGradient>
+    <radialGradient id="lsHaze" cx="0.30" cy="0.80" r="0.55">
+      <stop offset="0" stop-color="#3f6ea8" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#3f6ea8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lsWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16233c"/>
+      <stop offset="1" stop-color="#080d18"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="600" fill="url(#lsSky)"/>
+  <rect width="1600" height="600" fill="url(#lsHaze)"/>
+
+  <!-- distant cluster -->
+  <g fill="#0d1526" opacity="0.85">
+    <rect x="1180" y="352" width="54" height="150"/>
+    <rect x="1250" y="322" width="38" height="180"/>
+    <rect x="1302" y="368" width="62" height="134"/>
+    <rect x="1380" y="336" width="44" height="166"/>
+    <rect x="1438" y="386" width="70" height="116"/>
+    <rect x="1520" y="358" width="52" height="144"/>
+  </g>
+
+  <!-- Palace of Westminster -->
+  <g fill="#070d1a">
+    <rect x="300" y="352" width="640" height="150"/>
+    <!-- roof crest and spires -->
+    <path d="M300 352 L340 330 L380 352 L420 352 L450 326 L480 352 L520 352
+             L560 332 L600 352 L640 352 L670 320 L700 352 L740 352
+             L780 334 L820 352 L860 352 L900 330 L940 352 L940 352 H300 Z"/>
+    <!-- central tower -->
+    <path d="M540 326 L566 262 L592 326 Z"/>
+    <rect x="548" y="326" width="36" height="176"/>
+    <path d="M540 262 L566 210 L592 262 H540 Z"/>
+    <!-- Victoria Tower -->
+    <rect x="866" y="268" width="76" height="234"/>
+    <path d="M866 268 L904 196 L942 268 Z"/>
+    <rect x="866" y="268" width="76" height="14" fill="#0b1424"/>
+    <!-- windows -->
+    <g fill="#16233c" opacity="0.55">
+      <rect x="330" y="392" width="16" height="40" rx="8"/>
+      <rect x="366" y="392" width="16" height="40" rx="8"/>
+      <rect x="402" y="392" width="16" height="40" rx="8"/>
+      <rect x="438" y="392" width="16" height="40" rx="8"/>
+      <rect x="474" y="392" width="16" height="40" rx="8"/>
+      <rect x="626" y="392" width="16" height="40" rx="8"/>
+      <rect x="662" y="392" width="16" height="40" rx="8"/>
+      <rect x="698" y="392" width="16" height="40" rx="8"/>
+      <rect x="734" y="392" width="16" height="40" rx="8"/>
+      <rect x="770" y="392" width="16" height="40" rx="8"/>
+      <rect x="806" y="392" width="16" height="40" rx="8"/>
+    </g>
+  </g>
+
+  <!-- Elizabeth Tower (Big Ben) -->
+  <g>
+    <rect x="150" y="176" width="92" height="326" fill="#070d1a"/>
+    <path d="M150 176 L196 108 L242 176 H150 Z" fill="#070d1a"/>
+    <path d="M184 108 L196 78 L208 108 H184 Z" fill="#070d1a"/>
+    <rect x="142" y="196" width="108" height="12" fill="#0b1424"/>
+    <rect x="142" y="470" width="108" height="12" fill="#0b1424"/>
+    <!-- clock faces, lit -->
+    <circle cx="172" cy="292" r="25" fill="#16233c"/>
+    <circle cx="172" cy="292" r="25" fill="none" stroke="#e8c98a" stroke-width="2.5" opacity="0.75"/>
+    <circle cx="220" cy="292" r="25" fill="#16233c"/>
+    <circle cx="220" cy="292" r="25" fill="none" stroke="#e8c98a" stroke-width="2.5" opacity="0.75"/>
+    <g stroke="#e8c98a" stroke-width="2" opacity="0.7">
+      <line x1="172" y1="292" x2="172" y2="277"/>
+      <line x1="172" y1="292" x2="183" y2="298"/>
+      <line x1="220" y1="292" x2="220" y2="277"/>
+      <line x1="220" y1="292" x2="231" y2="298"/>
+    </g>
+  </g>
+
+  <!-- river -->
+  <rect x="0" y="502" width="1600" height="98" fill="url(#lsWater)"/>
+  <g opacity="0.22" stroke="#5a86c4" stroke-width="1.5">
+    <path d="M0 528 H420M470 546 H900M960 526 H1400M60 566 H520M600 572 H1180"/>
+  </g>
+
+  <!-- near bank -->
+  <rect x="0" y="586" width="1600" height="14" fill="#05070d"/>
+</svg>

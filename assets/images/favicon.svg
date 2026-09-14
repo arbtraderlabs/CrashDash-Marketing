@@ -1,12 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img">
+  <title>CrashDash</title>
+  <!-- App icon: the brand mark on the dark brand field, for browser tabs and
+       home-screen shortcuts. -->
   <defs>
-    <linearGradient id="cdFav" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#4a8dff"/>
-      <stop offset="1" stop-color="#1b4fd0"/>
+    <linearGradient id="fvField" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#122043"/>
+      <stop offset="1" stop-color="#070b14"/>
     </linearGradient>
+    <linearGradient id="fvBolt" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#ffe066"/>
+      <stop offset="0.55" stop-color="#ffd21e"/>
+      <stop offset="1" stop-color="#f2a900"/>
+    </linearGradient>
+    <clipPath id="fvClip">
+      <rect x="2" y="2" width="60" height="60" rx="14"/>
+    </clipPath>
   </defs>
-  <rect width="64" height="64" rx="14" fill="url(#cdFav)"/>
-  <path d="M11 25 L23 44 L33 32 L51 15"
-        fill="none" stroke="#ffffff" stroke-width="6"
-        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#fvField)"/>
+  <rect x="2.75" y="2.75" width="58.5" height="58.5" rx="13.4" fill="none"
+        stroke="rgba(255,255,255,.10)" stroke-width="1.5"/>
+
+  <g clip-path="url(#fvClip)">
+    <g stroke-linecap="round" opacity="0.92">
+      <line x1="18" y1="20" x2="18" y2="48" stroke="#d93a3a" stroke-width="2.6"/>
+      <rect x="13" y="30" width="10" height="13" rx="2" fill="#d93a3a"/>
+      <line x1="46" y1="20" x2="46" y2="48" stroke="#2563eb" stroke-width="2.6"/>
+      <rect x="41" y="24" width="10" height="13" rx="2" fill="#2563eb"/>
+    </g>
+    <path d="M36 12 L20 36 H30 L28 54 L44 31 H34 Z" fill="url(#fvBolt)"/>
+  </g>
 </svg>
