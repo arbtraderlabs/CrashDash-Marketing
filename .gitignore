@@ -1,0 +1,49 @@
+# ---------------------------------------------------------------------------
+# CrashDash Marketing — repository hygiene
+#
+# This repository is a PUBLIC-FACING static marketing site. Nothing here may
+# reference, import or depend on any private system.
+#
+# Rule of thumb: if it is generated, local, or machine-specific, it does not
+# belong in this repository.
+# ---------------------------------------------------------------------------
+
+# --- Operating system noise -------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# --- Editor / IDE state -----------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Logs and debug output --------------------------------------------------
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# --- Local scratch (never commit) -------------------------------------------
+/scratch/
+/notes/
+/tmp/
+*.tmp
+*.bak
+
+# --- Dependency / build output (only if a build step is ever introduced) ----
+node_modules/
+dist/
+build/
+.cache/
+
+# --- Environment and secret material (must never exist here) ----------------
+.env
+.env.*
+*.pem
+*.key
+secrets.*

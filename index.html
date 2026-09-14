@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>CrashDash — overlooked UK small-caps, brought back into view</title>
+<meta name="description" content="CrashDash is a research tool that surfaces UK-listed smaller companies which have fallen a long way from their highs, and gives you the context to decide whether they deserve a second look. Private beta.">
+<meta name="theme-color" content="#0b1220">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Static-only boundary. connect-src 'none' means this page cannot call any API.
+     frame-ancestors is not honoured in a meta tag; set it as an HTTP header if needed. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CrashDash">
+<meta property="og:title" content="CrashDash — overlooked UK small-caps, brought back into view">
+<meta property="og:description" content="A research tool that surfaces UK-listed smaller companies which have fallen a long way from their highs — and the context to judge whether the market has overreacted.">
+<meta name="twitter:card" content="summary">
+
+<!-- Social preview image: export assets/images/og-card.svg to a 1200x630 PNG
+     (og-card.png), then add:
+       <meta property="og:image" content="assets/images/og-card.png">
+       <meta name="twitter:card" content="summary_large_image">
+     SVG is not rendered by the major social platforms, so it is deliberately not
+     referenced here rather than shipping a broken preview. -->
+
+<!-- Canonical URL: add this once a domain is chosen, and mirror it in og:url.
+     <link rel="canonical" href="https://example.com/">
+     <meta property="og:url" content="https://example.com/"> -->
+
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="#top" aria-label="CrashDash home">
+      <img class="brand__mark" src="assets/images/logo.svg" alt="" width="34" height="34">
+      <span class="brand__name">CrashDash</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="#what">What it does</a>
+      <a href="#idea">The idea</a>
+      <a href="#audience">Who it's for</a>
+      <a href="#sample">Sample</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--sm btn--primary" data-beta-link href="#beta">Request beta access</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================================================================ HERO -->
+  <section class="hero">
+    <div class="wrap hero__inner">
+      <p class="eyebrow">Private beta · UK-listed smaller companies</p>
+      <h1 class="hero__title">Overlooked companies.<br>Unusual drawdowns.<br>A second look.</h1>
+      <p class="hero__lede">
+        CrashDash is a research tool. It surfaces UK-listed smaller companies that have
+        fallen a long way from their highs, then puts the company's own story and the
+        market's reaction next to it — so you can judge for yourself whether the market
+        has overreacted.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" data-beta-link href="#beta">Request beta access</a>
+        <a class="btn btn--ghost" href="#what">See what it does</a>
+      </div>
+      <p class="hero__footnote">
+        A research and education tool. Not financial advice, and not a trading system.
+      </p>
+    </div>
+  </section>
+
+  <!-- =============================================================== WHAT -->
+  <section class="section" id="what">
+    <div class="wrap">
+      <header class="section__head">
+        <h2>The problem is not a lack of data</h2>
+        <p class="section__lede">
+          It is that the market has thousands of small companies and almost no attention
+          to spare. A business can drift far out of view long before anything about it
+          changes.
+        </p>
+      </header>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5v14h18"/><path d="M7 15l4-6 3 3 5-8"/></svg>
+          </div>
+          <h3 class="card__title">It brings names back into view</h3>
+          <p>
+            CrashDash watches UK-listed smaller companies and highlights those whose
+            share price has fallen a long way from its high. These are the names that
+            screens tend to miss and research rarely reaches.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 10h14"/><path d="M7 14h10"/></svg>
+          </div>
+          <h3 class="card__title">It puts the context beside it</h3>
+          <p>
+            A falling price on its own tells you nothing. Alongside each name you get
+            the company's identity, its own announcements, and how investors are
+            talking about it — the evidence you need to form a view.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <h3 class="card__title">It stays out of the decision</h3>
+          <p>
+            CrashDash raises a name for research. It does not tell you to buy or sell
+            anything, it does not predict a price, and it does not keep score. The
+            judgement stays with you.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================== IDEA -->
+  <section class="section section--tinted" id="idea">
+    <div class="wrap wrap--narrow">
+      <header class="section__head">
+        <h2>The idea</h2>
+      </header>
+
+      <p class="prose">
+        Most of the time, a share price that has collapsed is right. Something broke,
+        the market noticed, and the price is doing its job. That is the ordinary case,
+        and CrashDash assumes it.
+      </p>
+
+      <p class="prose">
+        Occasionally it is not. A company with no analyst coverage, no news flow and no
+        liquidity can fall simply because everyone who was going to sell already has.
+        At that point the price stops being a judgement about the business and starts
+        being a record of who left.
+      </p>
+
+      <p class="prose">
+        Those two situations look almost identical on a chart. Telling them apart is
+        research work — reading the announcements, understanding what the company
+        actually does, noticing whether anyone is still paying attention.
+      </p>
+
+      <p class="prose">
+        CrashDash does not claim to resolve that ambiguity. It exists to make sure the
+        question gets asked: to put the most extreme, least-watched names in front of
+        you, with their evidence attached, so that a human being can decide whether
+        any of them deserve a proper look.
+      </p>
+
+      <blockquote class="pull">
+        <p>The tool's job is to surface the question. The analyst's job is to answer it.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- =========================================================== AUDIENCE -->
+  <section class="section" id="audience">
+    <div class="wrap">
+      <header class="section__head">
+        <h2>Who it's for</h2>
+        <p class="section__lede">
+          People who already do their own research, and who would rather be shown a
+          candidate list than handed a conclusion.
+        </p>
+      </header>
+
+      <ul class="checklist">
+        <li>
+          <strong>Self-directed investors</strong> who follow UK smaller companies and
+          want a systematic way to notice what has fallen out of the conversation.
+        </li>
+        <li>
+          <strong>Analysts and researchers</strong> covering small- and micro-cap
+          markets, who need candidates surfaced rather than screened away.
+        </li>
+        <li>
+          <strong>Anyone who has ever missed a recovery</strong> because the company
+          had been out of the news for two years before it moved.
+        </li>
+      </ul>
+
+      <p class="prose prose--muted">
+        CrashDash is built for reading, not for trading. If you are looking for
+        signals to act on automatically, it is the wrong tool.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================================================ NOT -->
+  <section class="section section--tinted" id="not">
+    <div class="wrap">
+      <header class="section__head">
+        <h2>What CrashDash is not</h2>
+        <p class="section__lede">
+          Stated plainly, because it matters more than the marketing.
+        </p>
+      </header>
+
+      <div class="grid-2">
+        <ul class="crosslist">
+          <li>Not financial advice, and not a recommendation</li>
+          <li>No buy, sell or hold calls</li>
+          <li>No price targets or forecasts</li>
+          <li>No profit, loss or performance tracking</li>
+        </ul>
+        <ul class="crosslist">
+          <li>No execution, order routing or brokerage connection</li>
+          <li>No portfolio management</li>
+          <li>Not a substitute for your own due diligence</li>
+          <li>Not a prediction of what happens next</li>
+        </ul>
+      </div>
+
+      <p class="prose prose--muted">
+        CrashDash is a research and education tool. You are responsible for any
+        decision you make. If a company's situation is unclear, the honest answer is
+        that it is unclear — the tool is designed to help you reach that conclusion
+        faster, not to talk you out of it.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================= SAMPLE -->
+  <section class="section" id="sample">
+    <div class="wrap">
+      <header class="section__head">
+        <h2>What a research alert looks like</h2>
+        <p class="section__lede">
+          A name is raised for research, with the evidence that made it worth raising.
+        </p>
+      </header>
+
+      <div class="sample">
+        <div class="sample__badge">Illustrative example — not a real company</div>
+
+        <div class="sample__head">
+          <div>
+            <p class="sample__ticker">SAMPLE.L</p>
+            <p class="sample__company">Sample Industrial Holdings</p>
+          </div>
+          <div class="sample__meta">
+            <span class="chip">Research alert</span>
+            <span class="chip chip--quiet">Evidence attached</span>
+          </div>
+        </div>
+
+        <dl class="sample__grid">
+          <div>
+            <dt>What the company does</dt>
+            <dd>Specialist components for industrial equipment, sold into a narrow set of markets.</dd>
+          </div>
+          <div>
+            <dt>Why it was raised</dt>
+            <dd>The share price has fallen a long way from its high, over a long period, with little recent news.</dd>
+          </div>
+          <div>
+            <dt>Company announcements</dt>
+            <dd>Trading updates continue; no transformative event. The decline has been gradual rather than sudden.</dd>
+          </div>
+          <div>
+            <dt>Investor discussion</dt>
+            <dd>Quiet. Discussion is thin and mostly historic — attention has moved on rather than turned hostile.</dd>
+          </div>
+          <div>
+            <dt>Open questions</dt>
+            <dd>Is the end market structurally smaller, or cyclically weak? Does the balance sheet allow time?</dd>
+          </div>
+          <div>
+            <dt>Raised on</dt>
+            <dd>A fixed reference date and price, recorded when the name was surfaced.</dd>
+          </div>
+        </dl>
+
+        <p class="sample__foot">
+          Illustrative content only, using a fictional company. This is not a
+          recommendation and is not a template for one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================== BETA -->
+  <section class="section section--accent" id="beta">
+    <div class="wrap wrap--narrow center">
+      <h2>Private beta</h2>
+      <p class="section__lede">
+        CrashDash is being tested with a small group of users before wider release.
+        Access is granted manually, in small batches.
+      </p>
+
+      <div class="beta-cta">
+        <!-- ============================================================
+             BETA REQUEST LINK — SET THIS BEFORE DEPLOYING
+             Put your Google Form (or equivalent) URL in
+             assets/js/config.js -> betaRequestUrl
+             The buttons are wired automatically from that value.
+             ============================================================ -->
+        <a class="btn btn--primary btn--lg" data-beta-link href="#beta">Request beta access</a>
+
+        <!-- ============================================================
+             OPTIONAL CONTACT EMAIL
+             To offer a mailto fallback, replace the sentence below with a
+             link to a contact address you are happy to publish. Do not
+             commit a placeholder address.
+             ============================================================ -->
+        <p class="beta-note">
+          Applications open shortly.
+        </p>
+      </div>
+
+      <p class="hero__footnote">
+        Joining the beta list does not create an account, and no personal data is
+        processed by this website.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================================================ FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap wrap--narrow">
+      <header class="section__head">
+        <h2>Questions</h2>
+      </header>
+
+      <details class="qa">
+        <summary>Does CrashDash tell me what to buy?</summary>
+        <p>
+          No. It surfaces companies that may warrant a closer look and gives you the
+          evidence around them. Every decision, and every conclusion, is yours.
+        </p>
+      </details>
+
+      <details class="qa">
+        <summary>Is this financial advice?</summary>
+        <p>
+          No. CrashDash is a research and education tool. It is not regulated advice
+          and it is not a recommendation.
+        </p>
+      </details>
+
+      <details class="qa">
+        <summary>Which markets does it cover?</summary>
+        <p>
+          UK-listed smaller companies. Coverage is deliberately narrow, and the beta
+          is focused on getting the quality right before the breadth.
+        </p>
+      </details>
+
+      <details class="qa">
+        <summary>Will it work on my phone?</summary>
+        <p>
+          The site you are reading is fully responsive. The research product itself is
+          designed for desktop reading, which is where this kind of work happens.
+        </p>
+      </details>
+
+      <details class="qa">
+        <summary>What happens to my details if I request access?</summary>
+        <p>
+          Requests are handled manually by the team. This website collects nothing
+          itself — it holds no accounts, no analytics and no cookies.
+        </p>
+      </details>
+
+      <details class="qa">
+        <summary>Where does the data come from?</summary>
+        <p>
+          We do not discuss the internals of how the product is built. What matters
+          publicly is the standard it is held to: every claim should be traceable to
+          an observable source.
+        </p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <img src="assets/images/logo.svg" alt="" width="28" height="28">
+      <span>CrashDash</span>
+    </div>
+    <p class="site-footer__legal">
+      CrashDash is a research and education tool for UK-listed smaller companies. It is
+      not financial advice, not a recommendation, and not an offer to buy or sell any
+      security. Nothing on this site should be relied upon as a basis for an investment
+      decision. Always do your own research.
+    </p>
+    <p class="site-footer__meta">
+      <span>&copy; <span id="year">2026</span> CrashDash</span>
+      <span aria-hidden="true">·</span>
+      <a href="#top">Back to top</a>
+    </p>
+  </div>
+</footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

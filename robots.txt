@@ -1,0 +1,11 @@
+# CrashDash Marketing — crawler policy
+#
+# The site is public and indexable. Replace the Sitemap line below with your
+# canonical domain once one is chosen.
+
+User-agent: *
+Allow: /
+
+# No sitemap is declared because no canonical domain is set yet.
+# When you have one, add:
+#   Sitemap: https://<your-domain>/sitemap.xml
