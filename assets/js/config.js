@@ -23,23 +23,6 @@ window.CRASHDASH_SITE = {
      ------------------------------------------------------------------------- */
   betaRequestUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc6CessVM-ne8DAZRx-5C0WVipxjI065nFecHUUDdDxP6IDxw/viewform?usp=publish-editor",
 
-  /* -------------------------------------------------------------------------
-     INTRODUCTION VIDEO (optional)
-     -------------------------------------------------------------------------
-     Paste a YouTube URL to activate the "Why CrashDash?" section, e.g.
-
-       videoUrl: "https://www.youtube.com/watch?v=XXXXXXXXXXX"
-
-     Leave it as an empty string to keep the polished placeholder state. When
-     empty the section never creates an iframe, so the site ships nothing broken.
-
-     Nothing third-party is requested until a visitor clicks play.
-     ------------------------------------------------------------------------- */
-  videoUrl: "",
-
-  /* Accessible title used on the embedded player. */
-  videoTitle: "Why CrashDash? — 60 second introduction",
-
   /* Open the beta link in a new tab. Set to false to navigate in the same tab. */
   betaOpensNewTab: true
 

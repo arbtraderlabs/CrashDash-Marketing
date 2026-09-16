@@ -1,6 +1,7 @@
 CrashDash Cinematic HTML — Music Edition
 
-Open index.html in Chrome or Edge and click “Play with sound”.
+Open index.html in Chrome or Edge and click “Play with sound”. The end card
+provides an explicit Replay control after the 30-second timeline completes.
 
 Includes:
 - 3 Pixlr video scenes

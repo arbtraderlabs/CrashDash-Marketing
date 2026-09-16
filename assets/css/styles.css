@@ -561,72 +561,35 @@ a:hover { color: #fff; }
   color: var(--muted); font-size: 1rem;
 }
 
-/* --- 13 video ------------------------------------------------------------ */
-.video { max-width: 880px; margin-inline: auto; }
-.video__frame {
-  position: relative; display: block; width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: linear-gradient(165deg, var(--panel-3), var(--panel));
-  cursor: pointer; overflow: hidden; padding: 0;
-  font: inherit; color: inherit;
-}
-.video__frame:hover { border-color: rgba(90, 162, 255, 0.4); }
-.video__frame:hover .video__play { transform: translate(-50%, -50%) scale(1.06); }
-.video__grid {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(47,123,255,.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(47,123,255,.09) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse at 50% 45%, #000 30%, transparent 78%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 45%, #000 30%, transparent 78%);
-}
-.video__play {
-  position: absolute; left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-  width: 74px; height: 74px; border-radius: 50%;
-  background: var(--accent);
-  transition: transform 0.18s ease;
-}
-.video__play::after {
-  content: ""; position: absolute; left: 52%; top: 50%;
-  transform: translate(-50%, -50%);
-  width: 0; height: 0;
-  border-left: 19px solid #04101f;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-}
-.video__meta {
-  position: absolute; left: 1.2rem; bottom: 1.1rem; right: 1.2rem;
-  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
-  text-align: left;
-}
-.video__title { font-weight: 680; font-size: 1rem; }
-.video__len {
-  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--accent-light);
-}
-.video__caption {
-  margin: 1rem 0 0; text-align: center;
-  font-size: 0.87rem; color: var(--muted);
-}
-.video iframe {
-  width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--radius);
-  display: block; background: #000;
-}
-
-/* --- 13b cinematic intro ------------------------------------------------- */
+/* --- 13 cinematic intro -------------------------------------------------- */
 /* Contains the self-hosted cinematic embedded in the #video section from
-   CrashDash_Cinematic_HTML_MUSIC/. The experience is isolated in an iframe,
+   assets/cinematic/. The experience is isolated in an iframe,
    so these rules only size and contain the frame; they deliberately do not
    reach inside it. Scoped to the two cinematic classes only. */
-.crashdash-cinematic-wrapper { margin: 0 auto clamp(1.4rem, 3vw, 2.4rem); }
+.crashdash-cinematic-wrapper {
+  max-width: 760px; margin: 0 auto;
+  padding: clamp(.55rem, 1.2vw, .8rem);
+  border: 1px solid rgba(90, 162, 255, .28);
+  border-radius: calc(var(--radius) + 6px);
+  background: linear-gradient(145deg, rgba(28, 39, 59, .96), rgba(8, 13, 23, .98));
+  box-shadow: 0 26px 70px rgba(0, 0, 0, .42), inset 0 1px rgba(255,255,255,.04);
+}
+.crashdash-cinematic-screen {
+  overflow: hidden; border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius); background: #000;
+}
 .crashdash-cinematic-frame {
   display: block; width: 100%; aspect-ratio: 16 / 9;
-  border: 1px solid var(--line); border-radius: var(--radius);
-  background: #000;
+  border: 0; background: #000;
+}
+.crashdash-cinematic-meta {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .75rem .25rem .1rem; color: var(--ink-soft);
+  font-size: .86rem; font-weight: 680;
+}
+.crashdash-cinematic-meta span:last-child {
+  color: var(--accent-light); font-size: .75rem; letter-spacing: .08em;
+  text-transform: uppercase;
 }
 
 /* --- 14 beta ------------------------------------------------------------- */
@@ -702,11 +665,13 @@ a:hover { color: #fff; }
 .site-footer__nav a { color: var(--ink-soft); font-size: 0.9rem; }
 .site-footer__social { display: flex; gap: 0.55rem; }
 .social {
-  display: grid; place-items: center;
+  display: inline-flex; align-items: center; justify-content: center; gap: .45rem;
   width: 34px; height: 34px; border-radius: 9px;
   border: 1px solid var(--line); color: var(--muted);
 }
 .social svg { width: 17px; height: 17px; }
+.social--x { width: auto; padding: 0 .7rem; font-size: .8rem; }
+.social--x:hover { border-color: rgba(90,162,255,.45); color: var(--ink); }
 
 .site-footer__legal {
   margin: 0 0 1.4rem; max-width: 92ch;
@@ -783,18 +748,11 @@ a:hover { color: #fff; }
   .hero__subtext { font-size: 0.8rem; }
   .beta__icon { display: none; }
   .beta { grid-template-columns: 1fr; }
-  .video__meta { flex-direction: column; gap: 0.25rem; align-items: flex-start; }
-  .video__play { width: 60px; height: 60px; }
-  .video__play::after {
-    border-left-width: 16px;
-    border-top-width: 10px;
-    border-bottom-width: 10px;
-  }
 }
 
 /* --- 18 print ------------------------------------------------------------ */
 @media print {
-  .site-header, .nav-toggle, .video, .hero__atmosphere, .hero__scrim,
+  .site-header, .nav-toggle, .crashdash-cinematic-wrapper, .hero__atmosphere, .hero__scrim,
   .quote__bg, .quote__scrim, .schematic__chrome { display: none !important; }
   body { background: #fff; color: #000; }
 }

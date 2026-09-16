@@ -12,11 +12,9 @@
 
 <!-- Static-only boundary on load: connect-src 'none' means the page cannot call
      any API, and form-action 'none' means no form can post anywhere.
-     frame-src allows 'self' for the same-origin cinematic embed, plus the
-     optional video facade's third-party embed which is created only AFTER a
-     user clicks it; nothing third-party is requested on page load.
+     frame-src allows 'self' for the same-origin cinematic embed.
      frame-ancestors is not honoured in a meta tag; set it as an HTTP header. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; frame-src 'self'">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="CrashDash">
@@ -94,7 +92,7 @@
           <a class="btn btn--primary btn--lg" data-beta-link href="#beta">Request beta access</a>
           <a class="btn btn--ghost btn--lg" href="#video">
             <span class="btn__play" aria-hidden="true"></span>
-            Watch the video (60s)
+            Watch the intro (30s)
           </a>
         </div>
 
@@ -515,41 +513,30 @@
     <div class="wrap">
       <header class="section__head center">
         <p class="kicker">Why CrashDash?</p>
-        <h2>Sixty seconds on why we built it.</h2>
+        <h2>Why we built CrashDash</h2>
+        <p class="section__lede">A short introduction to the idea behind CrashDash.</p>
       </header>
 
       <!-- CrashDash cinematic. Self-contained experience served from the
-           CrashDash_Cinematic_HTML_MUSIC/ folder. It is embedded in an
+           assets/cinematic/ folder. It is embedded in an
            isolated iframe so its own full-viewport layout, 16:9 stage,
            animation timeline and single audio track keep working exactly as
            built, without inheriting this page's styles or scroll behaviour.
            The CSP above permits this with frame-src 'self'. -->
-      <div class="crashdash-cinematic-wrapper">
-        <iframe
-          class="crashdash-cinematic-frame"
-          src="CrashDash_Cinematic_HTML_MUSIC/index.html"
-          title="CrashDash cinematic introduction"
-          loading="eager"
-          allow="autoplay; fullscreen"
-        ></iframe>
-      </div>
-
-      <!-- Video facade. Click-to-load: nothing third-party is requested until the
-           visitor chooses to play. Configure the URL in assets/js/config.js. -->
-      <div class="video" data-video-block>
-        <button class="video__frame" type="button" data-video-play
-                aria-label="Play the CrashDash introduction video">
-          <span class="video__grid" aria-hidden="true"></span>
-          <span class="video__play" aria-hidden="true"></span>
-          <span class="video__meta">
-            <span class="video__title">CrashDash in 60 seconds</span>
-            <span class="video__len">Watch</span>
-          </span>
-        </button>
-        <p class="video__caption" data-video-caption>
-          The introduction video is being finished. Request beta access and we'll
-          send it to you directly.
-        </p>
+      <div class="crashdash-cinematic-wrapper" aria-label="CrashDash Intro, 30 seconds">
+        <div class="crashdash-cinematic-screen">
+          <iframe
+            class="crashdash-cinematic-frame"
+            src="assets/cinematic/index.html"
+            title="CrashDash Intro — 30 second cinematic"
+            loading="eager"
+            allow="autoplay; fullscreen"
+          ></iframe>
+        </div>
+        <div class="crashdash-cinematic-meta">
+          <span>CrashDash Intro</span>
+          <span>30 sec</span>
+        </div>
       </div>
     </div>
   </section>
@@ -677,12 +664,11 @@
       </nav>
 
       <div class="site-footer__social">
-        <!-- Social profiles: add real URLs here when they are confirmed public.
-             Left as non-links on purpose rather than pointing at unverified
-             accounts. -->
-        <span class="social" aria-hidden="true">
+        <a class="social social--x" href="https://x.com/CrashDashAI" target="_blank"
+           rel="noopener noreferrer" aria-label="Follow CrashDash on X">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-6.6 7.6L21.8 21h-5.5l-4.3-5.7L6.9 21H3.8l7-8-6.8-10h5.6l3.9 5.2L17.5 3Zm-1 16h1.6L7.6 4.6H5.9L16.5 19Z"/></svg>
-        </span>
+          <span>Follow on X</span>
+        </a>
         <span class="social" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C18.3 5.2 12 5.2 12 5.2s-6.3 0-7.9.4a2.5 2.5 0 0 0-1.7 1.7C2 8.8 2 12 2 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.6.4 7.9.4 7.9.4s6.3 0 7.9-.4a2.5 2.5 0 0 0 1.7-1.7C22 15.2 22 12 22 12ZM10 15.2V8.8l5.5 3.2-5.5 3.2Z"/></svg>
         </span>
