@@ -21,7 +21,7 @@ window.CRASHDASH_SITE = {
      routed to the "Private beta" section instead, so the site never ships a
      broken link.
      ------------------------------------------------------------------------- */
-  betaRequestUrl: "",
+  betaRequestUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc8J22MxLbRRFRB-ztsxco7z6VN2NBmSu8rTk9RGVu4ejg1Tw/viewform?usp=publish-editor",
 
   /* -------------------------------------------------------------------------
      INTRODUCTION VIDEO (optional)

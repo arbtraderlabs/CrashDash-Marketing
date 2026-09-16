@@ -12,10 +12,11 @@
 
 <!-- Static-only boundary on load: connect-src 'none' means the page cannot call
      any API, and form-action 'none' means no form can post anywhere.
-     frame-src is listed only so the optional video facade can create an embed
-     AFTER a user clicks it; nothing third-party is requested on page load.
+     frame-src allows 'self' for the same-origin cinematic embed, plus the
+     optional video facade's third-party embed which is created only AFTER a
+     user clicks it; nothing third-party is requested on page load.
      frame-ancestors is not honoured in a meta tag; set it as an HTTP header. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; frame-src https://www.youtube-nocookie.com https://www.youtube.com">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="CrashDash">
@@ -516,6 +517,22 @@
         <p class="kicker">Why CrashDash?</p>
         <h2>Sixty seconds on why we built it.</h2>
       </header>
+
+      <!-- CrashDash cinematic. Self-contained experience served from the
+           CrashDash_Cinematic_HTML_MUSIC/ folder. It is embedded in an
+           isolated iframe so its own full-viewport layout, 16:9 stage,
+           animation timeline and single audio track keep working exactly as
+           built, without inheriting this page's styles or scroll behaviour.
+           The CSP above permits this with frame-src 'self'. -->
+      <div class="crashdash-cinematic-wrapper">
+        <iframe
+          class="crashdash-cinematic-frame"
+          src="CrashDash_Cinematic_HTML_MUSIC/index.html"
+          title="CrashDash cinematic introduction"
+          loading="eager"
+          allow="autoplay; fullscreen"
+        ></iframe>
+      </div>
 
       <!-- Video facade. Click-to-load: nothing third-party is requested until the
            visitor chooses to play. Configure the URL in assets/js/config.js. -->

@@ -617,6 +617,18 @@ a:hover { color: #fff; }
   display: block; background: #000;
 }
 
+/* --- 13b cinematic intro ------------------------------------------------- */
+/* Contains the self-hosted cinematic embedded in the #video section from
+   CrashDash_Cinematic_HTML_MUSIC/. The experience is isolated in an iframe,
+   so these rules only size and contain the frame; they deliberately do not
+   reach inside it. Scoped to the two cinematic classes only. */
+.crashdash-cinematic-wrapper { margin: 0 auto clamp(1.4rem, 3vw, 2.4rem); }
+.crashdash-cinematic-frame {
+  display: block; width: 100%; aspect-ratio: 16 / 9;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: #000;
+}
+
 /* --- 14 beta ------------------------------------------------------------- */
 .beta {
   display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
