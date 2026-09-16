@@ -54,6 +54,23 @@ build/
 # --- Environment and secret material (must never exist here) ----------------
 .env
 .env.*
+*.secret
+*.credentials
 *.pem
 *.key
 secrets.*
+
+# --- Internal operational material (must never exist here) ------------------
+# This repository is public. Operational documentation, automation source and
+# internal tooling belong in a private CrashDash repository, never here.
+internal/
+ops/
+.private/
+*_RUNBOOK.md
+*_INTERNAL.md
+
+# --- Apps Script / automation source ----------------------------------------
+# Excluded by directory/purpose rather than by a blanket "*.gs" rule, so a
+# future legitimate public use of the extension is not silently blocked.
+/apps-script/
+/automation/
