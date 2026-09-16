@@ -59,6 +59,29 @@
     });
   }
 
+  /* --- Cinematic messages ---------------------------------------------- */
+  function initCinematicMessages() {
+    var frame = document.querySelector(".crashdash-cinematic-frame");
+    var conversion = document.querySelector("[data-video-conversion]");
+    if (!frame) return;
+
+    window.addEventListener("message", function (event) {
+      if (event.origin !== window.location.origin || event.source !== frame.contentWindow) return;
+      if (!event.data || typeof event.data.type !== "string") return;
+
+      if (event.data.type === "crashdash:request-beta") {
+        var betaLink = conversion && conversion.querySelector("[data-beta-link]");
+        if (betaLink) betaLink.click();
+      }
+
+      if (event.data.type === "crashdash:cinematic-complete" && conversion) {
+        conversion.classList.remove("is-emphasized");
+        void conversion.offsetWidth;
+        conversion.classList.add("is-emphasized");
+      }
+    });
+  }
+
   /* --- Footer year ------------------------------------------------------ */
   function initYear() {
     var el = document.getElementById("year");
@@ -74,6 +97,7 @@
   function init() {
     initNav();
     initBetaLinks();
+    initCinematicMessages();
     initYear();
   }
 

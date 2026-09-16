@@ -90,9 +90,15 @@
 
         <div class="hero__actions">
           <a class="btn btn--primary btn--lg" data-beta-link href="#beta">Request beta access</a>
-          <a class="btn btn--ghost btn--lg" href="#video">
-            <span class="btn__play" aria-hidden="true"></span>
-            Watch the intro (30s)
+          <a class="hero-video-teaser" href="#video" aria-label="Watch the CrashDash intro, 30 seconds">
+            <span class="hero-video-teaser__thumb" aria-hidden="true">
+              <img src="assets/cinematic/assets/endcard.png" alt="">
+              <span class="hero-video-teaser__play"></span>
+            </span>
+            <span class="hero-video-teaser__copy">
+              <strong>Watch the intro</strong>
+              <span>30 sec</span>
+            </span>
           </a>
         </div>
 
@@ -531,11 +537,19 @@
             title="CrashDash Intro — 30 second cinematic"
             loading="eager"
             allow="autoplay; fullscreen"
+            allowfullscreen
           ></iframe>
         </div>
         <div class="crashdash-cinematic-meta">
           <span>CrashDash Intro</span>
           <span>30 sec</span>
+        </div>
+        <div class="crashdash-cinematic-conversion" data-video-conversion>
+          <div>
+            <strong>Ready to explore CrashDash?</strong>
+            <span>Join the limited LSE beta.</span>
+          </div>
+          <a class="btn btn--primary" data-beta-link href="#beta">Request beta access</a>
         </div>
       </div>
     </div>

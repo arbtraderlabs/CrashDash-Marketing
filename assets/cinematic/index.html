@@ -28,17 +28,22 @@ linear-gradient(180deg,rgba(0,0,0,.22),transparent 28%,transparent 70%,rgba(0,0,
 .center .rule{margin:0 auto 18px}
 .endcard{position:absolute;inset:0;z-index:20;background:#050b13 url('assets/endcard.png') center/cover no-repeat;opacity:0;transform:scale(1.025);transition:opacity 1.15s ease,transform 4.5s ease}
 .endcard.show{opacity:1;transform:scale(1)}
-.endcopy{position:absolute;z-index:24;left:7%;right:7%;bottom:8%;display:flex;justify-content:space-between;align-items:end;opacity:0;transition:opacity .9s ease}
+.endcopy{position:absolute;z-index:24;left:7%;right:7%;bottom:8%;display:flex;justify-content:space-between;align-items:end;opacity:0;pointer-events:none;transition:opacity .9s ease}
 .endcopy.show{opacity:1}
 .endcopy .mini{font-size:clamp(10px,.85vw,14px);letter-spacing:.18em;text-transform:uppercase;color:#d5dce5}
-.endcopy .cta{font-size:clamp(11px,1vw,16px);font-weight:800;color:#10151c;background:var(--gold);padding:10px 16px;border-radius:8px}
-.controls{position:absolute;z-index:40;top:18px;right:18px;display:flex;gap:8px;opacity:.28;transition:opacity .2s}.controls:hover{opacity:1}
-.controls button{background:rgba(5,11,19,.78);border:1px solid rgba(255,255,255,.18);color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
+.endcopy.show .cta{pointer-events:auto}
+.endcopy .cta{font:inherit;font-size:clamp(11px,1vw,16px);font-weight:800;color:#10151c;background:var(--gold);padding:10px 16px;border:0;border-radius:8px;cursor:pointer}
+.controls{position:absolute;z-index:40;top:14px;right:14px;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:7px;max-width:calc(100% - 28px);opacity:.78;transition:opacity .2s}.controls:hover,.controls:focus-within{opacity:1}
+.controls button{min-height:38px;background:rgba(5,11,19,.88);border:1px solid rgba(255,255,255,.28);color:#fff;padding:8px 11px;border-radius:8px;cursor:pointer;font-weight:650}.controls button:hover{border-color:var(--gold);color:var(--gold)}
+.controls button:disabled{opacity:.42;cursor:not-allowed}.controls button[hidden]{display:none}
+.controls button:focus-visible,.start button:focus-visible,.replay:focus-visible,.endcopy .cta:focus-visible{outline:3px solid #fff;outline-offset:2px}
 .progress{position:absolute;left:0;right:0;bottom:0;height:3px;z-index:50;background:rgba(255,255,255,.08)}.bar{height:100%;width:0;background:var(--gold);box-shadow:0 0 14px rgba(244,197,66,.7)}
 .start{position:absolute;inset:0;z-index:60;display:grid;place-items:center;background:linear-gradient(rgba(2,6,11,.42),rgba(2,6,11,.72)),url('assets/endcard.png') center/cover no-repeat}
 .start.hidden{display:none}.startbox{text-align:center}.logo{font-weight:850;font-size:clamp(34px,5vw,72px);letter-spacing:-.045em}.logo span{color:var(--gold)}
 .start p{color:var(--muted);margin:10px 0 24px}.start button{font-size:18px;padding:13px 24px;border:0;border-radius:10px;background:var(--gold);color:#10151c;font-weight:850;cursor:pointer;box-shadow:0 8px 30px rgba(244,197,66,.18)}
 .replay{position:absolute;z-index:70;left:50%;bottom:18%;transform:translateX(-50%);font-size:17px;padding:12px 22px;border:1px solid rgba(255,255,255,.28);border-radius:10px;background:rgba(5,11,19,.9);color:#fff;font-weight:800;cursor:pointer;box-shadow:0 10px 32px rgba(0,0,0,.35)}.replay[hidden]{display:none}.replay:hover{border-color:var(--gold);color:var(--gold)}
+@media(max-width:620px){.controls{top:8px;right:8px;max-width:calc(100% - 16px);gap:5px}.controls button{min-height:34px;padding:6px 8px;font-size:12px}.endcopy{bottom:10%;align-items:flex-end}.endcopy .mini{display:none}.endcopy .cta{padding:8px 11px}}
+@media(prefers-reduced-motion:reduce){.media,.copy,.endcard,.endcopy{transition-duration:.01ms}}
 </style>
 </head>
 <body>
@@ -80,74 +85,123 @@ linear-gradient(180deg,rgba(0,0,0,.22),transparent 28%,transparent 70%,rgba(0,0,
 
   <div id="end" class="endcard"></div>
   <div id="endcopy" class="endcopy">
-    <div class="mini">LSE BETA · LIMITED ACCESS</div><div class="cta">REQUEST BETA ACCESS</div>
+    <div class="mini">LSE BETA · LIMITED ACCESS</div><button id="endBetaBtn" class="cta" type="button">REQUEST BETA ACCESS</button>
   </div>
-  <button id="replayBtn" class="replay" type="button" onclick="restart()" hidden>↻ Replay</button>
+  <button id="replayBtn" class="replay" type="button" hidden>↻ Replay</button>
 
   <div class="controls">
-    <button onclick="restart()">Restart</button>
-    <button id="soundBtn" onclick="toggleSound()">Sound on</button>
-    <button onclick="toggleFS()">Full screen</button>
+    <button id="pauseBtn" type="button" disabled>Pause</button>
+    <button id="stopBtn" type="button" disabled>Stop</button>
+    <button id="restartBtn" type="button">Restart</button>
+    <button id="soundBtn" type="button">Sound on</button>
+    <button id="fsBtn" type="button">Full screen</button>
   </div>
   <div class="progress"><div id="bar" class="bar"></div></div>
 
   <div id="start" class="start"><div class="startbox">
     <div class="logo">Crash<span>Dash</span></div>
     <p>30-second cinematic beta story · original soundtrack</p>
-    <button onclick="playShow()">Play with sound</button>
+    <button id="playBtn" type="button">Play with sound</button>
   </div></div>
 </div></div>
 
 <script>
-const vids=[v1,v2,v3], copies=[c1,c2,c3,c4,c5], total=30;
-let timer=null, startedAt=0, soundOn=true, timeouts=[];
+const vids=[v1,v2,v3], copies=[c1,c2,c3,c4,c5], frame=document.querySelector('.frame');
+const total=30, clipStarts=[0,7,15.7];
+let state='idle', elapsed=0, playStartedAt=0, animationFrame=null, activeClip=-1, soundOn=true;
 
-function later(ms,fn){const id=setTimeout(fn,ms);timeouts.push(id)}
-function stopTimers(){timeouts.forEach(clearTimeout);timeouts=[]}
-function clearAll(){
-  stopTimers();
-  vids.forEach(v=>{v.pause();v.currentTime=0;v.classList.remove('active')});
-  score.pause(); score.currentTime=0;
-  copies.forEach(c=>c.classList.remove('show'));
-  end.classList.remove('show'); endcopy.classList.remove('show');
-  replayBtn.hidden=true;
-  bar.style.width='0%';
+function setControls(){
+  pauseBtn.disabled=state==='idle'||state==='completed';
+  stopBtn.disabled=state==='idle';
+  pauseBtn.textContent=state==='paused'?'Resume':'Pause';
 }
-function playVideo(v){
-  vids.forEach(x=>x.classList.remove('active'));
-  v.classList.add('active'); v.currentTime=0; v.play().catch(()=>{});
+function pauseMedia(){vids.forEach(v=>v.pause());score.pause()}
+function seekMedia(time){
+  const index=time<7?0:time<15.7?1:2;
+  vids.forEach((video,i)=>{
+    const local=Math.max(0,time-clipStarts[i]);
+    video.classList.toggle('active',i===index);
+    if(i===index&&Number.isFinite(video.duration)) video.currentTime=Math.min(local,Math.max(0,video.duration-.05));
+    else video.currentTime=0;
+  });
+  score.currentTime=Math.min(time,Number.isFinite(score.duration)?Math.max(0,score.duration-.05):time);
+  activeClip=index;
 }
-function playShow(){
-  start.classList.add('hidden'); clearAll(); startedAt=performance.now();
-  score.volume=.52; score.muted=!soundOn; score.play().catch(()=>{});
-  playVideo(v1); c1.classList.add('show');
-
-  later(3200,()=>{c1.classList.remove('show'); c2.classList.add('show')});
-  later(7000,()=>{c2.classList.remove('show'); playVideo(v2)});
-  later(8200,()=>c3.classList.add('show'));
-  later(12600,()=>{c3.classList.remove('show'); c4.classList.add('show')});
-  later(15700,()=>{c4.classList.remove('show'); playVideo(v3)});
-  later(17400,()=>c5.classList.add('show'));
-  later(23700,()=>c5.classList.remove('show'));
-  later(24750,()=>{end.classList.add('show'); endcopy.classList.add('show')});
-  later(30000,()=>{replayBtn.hidden=false});
-
-  if(timer) cancelAnimationFrame(timer); tick();
+function playMedia(){
+  const video=vids[activeClip];
+  if(video) video.play().catch(()=>{});
+  score.volume=.52;score.muted=!soundOn;
+  if(!Number.isFinite(score.duration)||elapsed<score.duration-.05)score.play().catch(()=>{});
 }
-function tick(){
-  const elapsed=Math.min(total,(performance.now()-startedAt)/1000);
-  bar.style.width=(elapsed/total*100)+'%';
-  if(elapsed<total) timer=requestAnimationFrame(tick);
+function render(time){
+  bar.style.width=(Math.min(time,total)/total*100)+'%';
+  const visible=[time<3.2,time>=3.2&&time<7,time>=8.2&&time<12.6,time>=12.6&&time<15.7,time>=17.4&&time<23.7];
+  copies.forEach((copy,i)=>copy.classList.toggle('show',visible[i]));
+  const ending=time>=24.75;
+  end.classList.toggle('show',ending);endcopy.classList.toggle('show',ending);
 }
-function restart(){playShow()}
-function toggleSound(){
-  soundOn=!soundOn; score.muted=!soundOn;
-  soundBtn.textContent=soundOn?'Sound on':'Sound off';
+function syncClip(time){
+  const next=time<7?0:time<15.7?1:2;
+  const local=time-clipStarts[next];
+  if(next!==activeClip){
+    vids.forEach((video,i)=>{video.pause();video.classList.toggle('active',i===next)});
+    activeClip=next;vids[next].currentTime=Math.max(0,local);
+    if(state==='playing') vids[next].play().catch(()=>{});
+  }else if(state==='playing'&&Math.abs(vids[next].currentTime-local)>.45){
+    vids[next].currentTime=Math.max(0,local);
+  }
+  if(state==='playing'&&(!Number.isFinite(score.duration)||time<score.duration-.05)&&Math.abs(score.currentTime-time)>.45)score.currentTime=time;
 }
+function tick(now){
+  if(state!=='playing') return;
+  elapsed=Math.min(total,(now-playStartedAt)/1000);
+  syncClip(elapsed);render(elapsed);
+  if(elapsed>=total){complete();return}
+  animationFrame=requestAnimationFrame(tick);
+}
+function begin(resuming=false){
+  if(animationFrame)cancelAnimationFrame(animationFrame);
+  start.classList.add('hidden');replayBtn.hidden=true;
+  if(!resuming)seekMedia(elapsed);
+  render(elapsed);state='playing';setControls();playMedia();
+  playStartedAt=performance.now()-elapsed*1000;
+  animationFrame=requestAnimationFrame(tick);
+}
+function playShow(){elapsed=0;begin()}
+function togglePause(){
+  if(state==='playing'){
+    elapsed=Math.min(total,(performance.now()-playStartedAt)/1000);
+    state='paused';if(animationFrame)cancelAnimationFrame(animationFrame);pauseMedia();render(elapsed);setControls();
+  }else if(state==='paused'){begin(true)}
+}
+function stopShow(){
+  if(animationFrame)cancelAnimationFrame(animationFrame);animationFrame=null;pauseMedia();
+  elapsed=0;activeClip=-1;state='idle';seekMedia(0);vids.forEach(v=>v.classList.remove('active'));
+  copies.forEach(c=>c.classList.remove('show'));end.classList.remove('show');endcopy.classList.remove('show');
+  replayBtn.hidden=true;bar.style.width='0%';start.classList.remove('hidden');setControls();
+}
+function restart(){elapsed=0;begin()}
+function complete(){
+  state='completed';elapsed=total;animationFrame=null;pauseMedia();render(total);replayBtn.hidden=false;setControls();
+  window.parent.postMessage({type:'crashdash:cinematic-complete'},window.location.origin);
+}
+function toggleSound(){soundOn=!soundOn;score.muted=!soundOn;soundBtn.textContent=soundOn?'Sound on':'Sound off'}
 function toggleFS(){
-  const el=document.querySelector('.frame');
-  if(!document.fullscreenElement) el.requestFullscreen?.();
-  else document.exitFullscreen?.();
+  if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});
+  else frame.requestFullscreen().catch(()=>{});
 }
+function updateFullscreen(){fsBtn.textContent=document.fullscreenElement?'Exit full screen':'Full screen'}
+function requestBeta(){window.parent.postMessage({type:'crashdash:request-beta'},window.location.origin)}
+
+playBtn.addEventListener('click',playShow);pauseBtn.addEventListener('click',togglePause);
+stopBtn.addEventListener('click',stopShow);restartBtn.addEventListener('click',restart);
+soundBtn.addEventListener('click',toggleSound);replayBtn.addEventListener('click',restart);
+endBetaBtn.addEventListener('click',requestBeta);fsBtn.addEventListener('click',toggleFS);
+document.addEventListener('fullscreenchange',updateFullscreen);
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&document.fullscreenElement)document.exitFullscreen().catch(()=>{});
+});
+if(!document.fullscreenEnabled||!frame.requestFullscreen)fsBtn.hidden=true;
+setControls();
 </script>
 </body></html>
