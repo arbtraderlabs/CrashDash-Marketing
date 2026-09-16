@@ -48,6 +48,9 @@ The `README` and any comment in this repository is public. Write accordingly.
   .gitignore              hygiene rules
   .nojekyll               tells GitHub Pages to serve the tree verbatim
   robots.txt              crawler policy
+  docs/
+    BETA_ACCESS_FLOW.md   how a beta request becomes a delivered invite
+    examples/crashdash_beta_invite.gs   canonical Apps Script example
   assets/
     css/styles.css        all styling
     js/config.js          the one place you set the beta link and video URL
